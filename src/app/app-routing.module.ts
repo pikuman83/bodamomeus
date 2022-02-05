@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InvitadoComponent } from './components/invitado/invitado.component';
-import { VenueComponent } from './components/venue/venue.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/venue', pathMatch: 'full'},
-  {path: 'invitado/:invitado', component: InvitadoComponent },
-  {path: 'venue', component: VenueComponent }
+  {path: 'invitado/:id', component: InvitadoComponent },
+  {path: 'dashboardRM', component: DashboardComponent }
 ];
 
 @NgModule({
