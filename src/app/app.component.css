@@ -7,15 +7,29 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  .container{
+    background-image: url(../assets/georgia-de-lotz-1n_HNfGVBxE-unsplash.jpg);
+    /* background-image: url(../assets/annie-spratt-wuc-KEIBrdE-unsplash.jpg); */
+    /* background-image: url(../assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg); */
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inner-container{
+    padding: 37% 0 40% 7%;
+    text-align: center;
+  }
+  
+  h1, h3 {
     margin: 8px 0;
     font-family: 'Satisfy', cursive;
   }
+  
   h1:hover{
     -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;  
@@ -60,22 +74,6 @@
   p {
     margin: 0;
   }
-
-  .container{
-      /* color: white; */
-      height: 100%;
-      width: 100%;
-      /* background-image: url(../assets/annie-spratt-wuc-KEIBrdE-unsplash.jpg); */
-      /* background-image: url(../assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg); */
-      background-image: url(../assets/georgia-de-lotz-1n_HNfGVBxE-unsplash.jpg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center
-    }
 
   @media screen and (max-width: 575px) {
     

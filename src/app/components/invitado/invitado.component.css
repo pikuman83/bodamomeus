@@ -1,0 +1,21 @@
+.container{
+    /* background-image: url(../../../assets/brooke-lark-tpCaZTXHfXM-unsplash.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    background-color: f8f8f8;
+    /* min-height: 400px; */
+}
+.titulo{
+    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 3px;
+    font-size: 40px;
+}
+.slogan{
+    margin-top: 24px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+}

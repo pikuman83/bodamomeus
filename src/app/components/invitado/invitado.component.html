@@ -1,0 +1,20 @@
+<div class="container" *ngIf="invitado">
+    <div class="titulo">
+        <br>
+        <!-- <h5>Estimad{{invitado.gender!}}</h5>     -->
+        <div class="d-flex">
+            <span>{{invitado.name1!}}</span>
+            <span>{{invitado.name2? '&nbsp;y ' + invitado.name2 : ''}}</span>
+        </div>
+    </div>
+    
+    <div class="slogan">
+        Hay días en la vida que son especiales por sí solos.
+        Compartirlos con las personas que quieres...
+        "los convierte en inolvidables"
+        {{invitado.gender! === 'os'? 'Sois' : 'Eres'}} muy 
+        {{invitado.gender! === 'os'? 'especiales' : 'especial'}} para nosotros y por eso 
+        nos encantaría celebrarlo {{invitado.gender! === 'os'? 'con vosotr@s' : 'contigo'}}
+    </div>
+
+</div>
