@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/invitado/o-Ali', pathMatch: 'full'},
   {path: 'venue', component: VenueComponent },
   {path: 'invitado/:id', component: InvitadoComponent },
-  // {path: 'dashboardRM', component: DashboardComponent }
+  {path: 'dashboardRM', component: DashboardComponent }
 ];
 
 @NgModule({
