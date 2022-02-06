@@ -23,7 +23,7 @@ export class InvitadoComponent implements OnInit {
   }
 
   getInvitado(): void{
-    const param = this.route.snapshot.paramMap.get('id')!.split('-') as string[];
+    const param = this.route.snapshot.paramMap.get('id')?.split('-') as string[];
     if (param){
       this.invitado = {
         gender: param[0],
