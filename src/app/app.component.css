@@ -18,6 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: -15px;
   }
 
   .inner-container{
@@ -38,11 +39,18 @@
     padding: 20px;
     font-size: 18px;
     text-align: center;
+    font-family: 'Londrina Solid', cursive;
   }
   span{
     padding: 14px 0;
     font-family: 'Londrina Solid';
     letter-spacing: 1px;
+  }
+  .biz{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #36b1f5;
   }
   
   h1:hover{
