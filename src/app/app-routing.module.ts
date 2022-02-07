@@ -4,10 +4,8 @@ import { InvitadoComponent } from './components/invitado/invitado.component';
 import { VenueComponent } from './components/venue/venue.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/invitado', pathMatch: 'full'},
-  {path: 'invitado', component: InvitadoComponent },
-  // {path: 'invitado/:id', component: InvitadoComponent },
-  {path: 'venue', component: VenueComponent }
+  // {path: '', redirectTo: '/invitado', pathMatch: 'full'},
+  {path: 'invitado/:id', component: InvitadoComponent }
 ];
 
 

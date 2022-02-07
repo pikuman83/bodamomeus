@@ -1,23 +1,61 @@
 <!-- 
     Valida el formulario y actualiza el estado del invitado, si existe o añade con color amigo de amigos
  -->
+<form #asistenciaForm="ngForm">
+    <div class="titulo1">Contamos contigo?</div>
 
-<div class="button">Confirma asistencia</div>
-<form>
-    <pre>
-        o confirmo
-        o aun no lo sé
-        o no vengo porque me caís mal
-        o Inventa una excusa
-    </pre>
+    <div class="asistencia">
+        <div class="radios">
+            <input type="radio" id="si" name="asistencia" value="confirmo asistencia" checked required [(ngModel)]="data.asiste">
+            <label for="si">Confirmo asistencia</label>
+        </div>
+    
+        <div class="radios">
+            <input type="radio" id="si2" name="asistencia" value="si2" required>
+            <label for="si2">Me caís mal pero vengo a la boda para comer y beber gratis</label>
+        </div>
+    
+        <div class="radios">
+            <input type="radio" id="dudas" name="asistencia" value="tengo dudas" required>
+            <label for="dudas">Aún no puedo confirmar</label>
+        </div>
+        
+        <div class="excusa" (click)="getExcuse()">No puedes? Clica para inventar una excusa</div>
 
-    <pre>
-        Elige Menú
-        o Carne
-        o Pescado
-        o Vegetariano
-        o Vegano
-            [] Sin gluten
-    </pre>
+        <div class="radios" *ngIf="excusa">
+            <input type="radio" id="excusa" name="asistencia" value="excusa" required>
+            <label for="excusa">{{excusa}}</label>
+        </div>
+    
+    
+    </div>
+    
+    <div  class="titulo1">Elige el plato principal</div>
+    <div class="menu">
+        <div class="radios">
+            <input type="radio" id="carne" name="menu">
+            <label for="carne">Carne</label>
+        </div>
+    
+        <div class="radios">
+            <input type="radio" id="pescado" name="menu">
+            <label for="pescado">Fish</label>
+        </div>
+    
+        <div class="radios">
+            <input type="radio" id="veggi" name="menu">
+            <label for="veggi">Vegetariano</label>
+        </div>
+    
+        <div class="radios">
+            <input type="radio" id="vegano" name="menu" checked>
+            <label for="vegano">Vegano</label>
+        </div>
+    
+        <textarea [(ngModel)]="data.comentarios" name="comentarios" rows="2" placeholder="Alergias? Sugerencias? Quiere contarnos algo? "></textarea>
+
+        <div class="excusa mt-20" (click)="addOrPatch(asistenciaForm)">Confirmar</div>
+
+    </div>
 
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GlobalService } from 'src/app/global.service';
 
 type Invitado = {
   gender: string,
@@ -16,7 +17,7 @@ type Invitado = {
 export class InvitadoComponent implements OnInit {
 
   invitado!: Invitado;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: GlobalService) { }
 
   ngOnInit(): void {
     this.getInvitado();
@@ -25,11 +26,16 @@ export class InvitadoComponent implements OnInit {
   getInvitado(): void{
     const param = this.route.snapshot.paramMap.get('id')?.split('-') as string[];
     if (param){
+      
       this.invitado = {
         gender: param[0],
         name1: param[1],
         name2: param[2]! 
       }
+
+      this.service.setinvitado(param[1]!);
+      this.service.invitado1 = param[2]!;
+      
     }
   }
 

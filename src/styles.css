@@ -4,11 +4,28 @@
 html, body{
     height: 100%;
     margin: 0;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background-color: #eae8e9;
 }
 
 .d-flex{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.titulo{
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 3px;
+    font-size: 28px;
+    color: #708469;
+}
+
+.titulo1{
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #eae8e9;
 }
