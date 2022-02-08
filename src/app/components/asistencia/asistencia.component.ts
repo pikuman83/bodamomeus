@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/global.service';
-
-type Data = {
-  nombre1: string,
-  nombre2?: string,
-  asiste: string,
-  comentarios: string,
-  plato: string
-}
+import { Data } from '../../interfaces'
 
 @Component({
   selector: 'app-asistencia',
@@ -26,7 +19,7 @@ export class AsistenciaComponent implements OnInit {
     'Era el dia 21? lo siento prometí a mi vecino que le cuidaria el gato este día'
   ];
 
-  excusa = '';
+  excusa = this.excusas[0];
   data: Data = {
     nombre1: '',
     nombre2: '',
@@ -35,23 +28,24 @@ export class AsistenciaComponent implements OnInit {
     plato: 'vegetariano'
   }
 
-  constructor(private service: GlobalService) { }
+  constructor(private service: GlobalService) {
+    service.invitado1.subscribe(inv => this.data.nombre1 = inv!);
+    service.invitado2.subscribe(inv2 => this.data.nombre2 = inv2? inv2 : '')
+   }
 
   ngOnInit(): void {
   }
 
   getExcuse(): void{
-    this. excusa = this.excusas[Math.floor(Math.random() * this.excusas.length)];
+    this.excusa = this.excusas[Math.floor(Math.random() * this.excusas.length)];
   }
 
-  addOrPatch(f: any){
-    console.log(f.value)
-    this.data.nombre1 = this.service.getinvitado();
-    this.data.nombre2 = this.service.invitado2!;
-    console.log(this.data);
-    // this.service.create('bodaMomeus', this.data).then(x => {
-    //   console.log('added', x);
-    // })
+  addOrPatch(){
+    this.service.create('bodaMomeus', this.data).then(x => {
+      // hide form?
+      alert('Notificación enviada')
+      console.log('added', x);
+    })
   }
 
 }

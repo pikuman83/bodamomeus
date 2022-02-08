@@ -17,7 +17,9 @@ type Invitado = {
 export class InvitadoComponent implements OnInit {
 
   invitado!: Invitado;
-  constructor(private route: ActivatedRoute, private service: GlobalService) { }
+  constructor(private route: ActivatedRoute, private service: GlobalService) {
+
+   }
 
   ngOnInit(): void {
     this.getInvitado();
@@ -33,9 +35,8 @@ export class InvitadoComponent implements OnInit {
         name2: param[2]! 
       }
 
-      this.service.setinvitado(param[1]!);
-      this.service.invitado1 = param[2]!;
-      
+      this.service.invitado1.next(param[1]!);
+      this.service.invitado2.next(param[2]!);      
     }
   }
 

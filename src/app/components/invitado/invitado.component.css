@@ -12,3 +12,24 @@
     font-size: 24px;
     padding: 20px;
 }
+.bizum{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 300px;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+  }
+  span{
+    padding: 14px 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+  }
+  .biz{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #36b1f5;
+  }

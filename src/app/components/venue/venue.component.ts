@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./venue.component.css']
 })
 export class VenueComponent implements OnInit {
-
-  constructor() { }
+  
   autoPlay = false;
+  
+  constructor() { }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.autoPlay = true;
-    }, 4000);
+    }, 3000);
   }
 
   // isElementInView(){
