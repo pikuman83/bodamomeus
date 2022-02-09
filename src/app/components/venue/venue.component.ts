@@ -17,6 +17,12 @@ export class VenueComponent implements OnInit {
     }, 3000);
   }
 
+  abc(e: any){
+    const x = e.target as HTMLVideoElement;
+    console.log(x)
+    x.play();
+  }
+
   // isElementInView(){
   //   const element = document.getElementsByTagName('video')[0];
   //   const pageTop = window.scrollX;

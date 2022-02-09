@@ -20,17 +20,23 @@ export class AsistenciaComponent implements OnInit {
   ];
 
   excusa = this.excusas[0];
-  data: Data = {
-    nombre1: '',
-    nombre2: '',
-    asiste: 'confirmo asistencia',
+  invitado1: Data = {
+    nombre: '',
+    asiste: 'Sí',
+    comentarios: '',
+    plato: 'vegetariano'
+  }
+  
+  invitado2: Data = {
+    nombre: '',
+    asiste: 'Sí',
     comentarios: '',
     plato: 'vegetariano'
   }
 
   constructor(private service: GlobalService) {
-    service.invitado1.subscribe(inv => this.data.nombre1 = inv!);
-    service.invitado2.subscribe(inv2 => this.data.nombre2 = inv2? inv2 : '')
+    service.invitado1.subscribe(inv => this.invitado1.nombre = inv!);
+    service.invitado2.subscribe(inv2 => this.invitado2.nombre = inv2? inv2 : '')
    }
 
   ngOnInit(): void {
@@ -41,10 +47,17 @@ export class AsistenciaComponent implements OnInit {
   }
 
   addOrPatch(){
-    this.service.create('bodaMomeus', this.data).then(x => {
-      // hide form?
-      alert('Notificación enviada')
-      console.log('added', x);
+    this.service.create('bodaMomeus', this.invitado1).then(x => {
+      if(this.invitado2.nombre){
+        this.invitado2.comentarios = this.invitado1.comentarios;
+        this.service.create('bodaMomeus', this.invitado2).then(y => {
+          alert('Notificación enviada')
+        })
+      }
+      else {
+        alert('Notificación enviada')
+      }
+      // hide form?? create a nice notification?
     })
   }
 

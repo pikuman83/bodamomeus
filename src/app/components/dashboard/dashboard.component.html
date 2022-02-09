@@ -2,22 +2,20 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Invitadx 1</th>
+            <th>Person</th>
             <th>Asistencia</th>
             <th>Plato</th>
             <th>Comentarios</th>
-            <th>Invitadx 2</th>
         </tr>
     </thead>
 
     <tbody>
         <tr class="table-row" *ngFor="let i of invitados; let j = index">
             <td>{{j+1}}.</td>
-            <td>{{i.nombre1}}</td>
-            <td class="pink" [class.green]="(i.asiste==='confirmo asistencia' || i.asiste === 'Comer y beber gratis')">{{i.asiste}}</td>
+            <td>{{i.nombre}}</td>
+            <td class="brown" [class.green]="i.asiste==='Sí'">{{i.asiste}}</td>
             <td>{{i.plato}}</td>
             <td>{{i.comentarios}}</td>
-            <td>{{i.nombre2!}}</td>
         </tr>
     </tbody>
 

@@ -1,6 +1,5 @@
 export type Data = {
-    nombre1: string,
-    nombre2?: string,
+    nombre: string,
     asiste: string,
     comentarios: string,
     plato: string

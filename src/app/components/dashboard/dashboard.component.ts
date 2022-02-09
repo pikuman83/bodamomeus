@@ -17,7 +17,6 @@ export class DashboardComponent implements OnInit {
 
   getInvitados(){
     this.service.get().then(x => x.forEach(y => {
-      console.log(y.data())
       this.invitados.push(y.data());
     }))
   }

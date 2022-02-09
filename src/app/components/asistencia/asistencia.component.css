@@ -1,11 +1,13 @@
 form{
     background-color: #ead0d3;
+    box-sizing: border-box;
+    padding-bottom: 20px;
 }
 .radios{
     font-size: 17px;
     padding: 20px;
 }
-.excusa{
+.confirm{
     padding: 13px 0;
     font-size: 15px;
     background: transparent;
@@ -13,6 +15,14 @@ form{
     box-shadow: 0px 1px 0px rgb(0 0 0 / 25%);
     cursor: pointer;
     text-align: center;
+    width: 220px;
+    margin: 40px auto 30px auto
+}
+.excusa{
+    font-size: 14px;
+    cursor: pointer;
+    text-align: end;
+    color: brown;
 }
 textarea{
     width: 100%;
@@ -22,13 +32,57 @@ textarea{
     border: none;
     border-bottom: 1px solid gray;
 }
-.asistencia, .menu{
+.asistencia{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 300px;
+    padding: 20px;
+}
+.bb{
+    border-bottom: #708469 1px solid;
+}
+.titulo2{
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 3px;
+    font-size: 18px;
+    color: #708469;
+}
+.plato{
+    border-top: 1px solid #708469;
+    border-bottom: #708469 1px solid;
+    color: black;
+    margin: 20px auto;
+    padding: 10px;
+}
+textarea{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: small;
+    display: block;
+}
+label{
+    padding: 8px
+}
+.bizum{
     display: flex;
     justify-content: center;
     flex-direction: column;
     min-height: 300px;
     padding: 20px;
-}
-.mt-20{
-    margin-top: 20px;
-}
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+  }
+  span{
+    padding: 14px 0;
+    font-family: 'Londrina Solid';
+    letter-spacing: 1px;
+  }
+  .biz{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #36b1f5;
+  }
