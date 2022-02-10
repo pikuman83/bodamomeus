@@ -10,13 +10,12 @@ import { Data } from '../../interfaces'
 export class AsistenciaComponent implements OnInit {
 
   excusas = [
-    'Me han regalado un vuelo a caribe solo para esta fecha',
-    'Estoy en la carcel',
-    'Tengo que cuidar a mis bisabuelos este día',
-    'Mi jefa me acaba de decir que tengo que ir urgente a canarias, lo siento, no puedo decrile no, pero te enviaré tu regalo por correos',
-    'Lo siento para esta fecha tengo planes de ir al parque',
-    'Estaba a punto de confirmar la asistencia cuando me di cuenta que este día tengo que acompañar a mi abuela a la pelu',
-    'Era el dia 21? lo siento prometí a mi vecino que le cuidaria el gato este día'
+    'Tinc previst ser positiu de Covid el dia 21/5 i no podré venir',
+    'Sóc a la garjola',
+    'No puc deixar a les alpaques soles a la granja un dissabte',
+    'Haig de quedar-me cuidant els besavis, nets, nebots o persones dependents en general',
+    'Estic enamorat/da de la Miluska/Ricard i no suportaría veure’ls casar-se',
+    'M’arriba una comanda d’Amazon i haig de ser a casa per obrir-li la porta al repartidor',
   ];
 
   excusa = this.excusas[0];

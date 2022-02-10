@@ -20,7 +20,6 @@ form{
 }
 .excusa{
     font-size: 14px;
-    cursor: pointer;
     text-align: end;
     color: brown;
 }
@@ -61,10 +60,15 @@ textarea{
     text-align: center;
     font-size: small;
     display: block;
+    resize: none;
 }
-label{
+label:not(:nth-child(2n+1)){
     padding: 8px
 }
+.excusa-label{
+    margin: -22px 0 0 25px;
+}
+
 .bizum{
     display: flex;
     justify-content: center;

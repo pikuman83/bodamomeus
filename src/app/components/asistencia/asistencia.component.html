@@ -1,5 +1,5 @@
 <form #asistenciaForm="ngForm">
-    <div class="titulo1">Contamos contigo?</div>
+    <div class="titulo1">Comptem amb tu?</div>
 
     <!-- Invitado 1 -->
     <div class="asistencia" [class.bb]="invitado2.nombre">
@@ -8,32 +8,32 @@
 
         <div class="radios">
             <input type="radio" id="si" name="asistencia" value="Sí" checked [(ngModel)]="invitado1.asiste">
-            <label for="si">Por supuesto</label>
+            <label for="si">I tant!</label>
         </div>
         
         <div class="radios">
             <input type="radio" id="excusa" name="asistencia" [value]="excusa" [(ngModel)]="invitado1.asiste">
-            <label for="excusa">{{excusa}}</label>
+            <div class="excusa-label"><label for="excusa">{{excusa}}</label></div>
         </div>
 
-        <div class="excusa" (click)="getExcuse()">Inventa otra excusa</div>
+        <div class="excusa" (click)="getExcuse()">Inventa altre excusa</div>
         
         <div class="titulo2 plato" *ngIf="invitado1.asiste==='Sí'">Elige el plato principal</div>
         <div class="menu23" *ngIf="invitado1.asiste==='Sí'">
 
             <div class="radios">
                 <input type="radio" id="carne" name="menu" value="Carne" [(ngModel)]="invitado1.plato">
-                <label for="carne">Carne</label>
+                <label for="carne">Carn</label>
             </div>
         
             <div class="radios">
                 <input type="radio" id="pescado" name="menu" value="Pescado" [(ngModel)]="invitado1.plato">
-                <label for="pescado">Pescado</label>
+                <label for="pescado">Peix</label>
             </div>
         
             <div class="radios">
                 <input type="radio" id="veggi" name="menu" checked value="vegetariano" [(ngModel)]="invitado1.plato">
-                <label for="veggi">Vegetariano</label>
+                <label for="veggi">Vegetarià</label>
             </div>
         </div>
     
@@ -46,7 +46,7 @@
 
         <div class="radios">
             <input type="radio" id="si2" name="asistencia2" value="Sí" [(ngModel)]="invitado2.asiste">
-            <label for="si2">Por supuesto</label>
+            <label for="si2">I tant!</label>
         </div>
         
         <div class="radios">
@@ -61,24 +61,25 @@
 
             <div class="radios">
                 <input type="radio" id="carne2" name="menu2" value="Carne" [(ngModel)]="invitado2.plato">
-                <label for="carne2">Carne</label>
+                <label for="carne2">Carn</label>
             </div>
         
             <div class="radios">
                 <input type="radio" id="pescado2" name="menu2" value="Pescado" [(ngModel)]="invitado2.plato">
-                <label for="pescado2">Pescado</label>
+                <label for="pescado2">Peix</label>
             </div>
         
             <div class="radios">
                 <input type="radio" id="veggi2" name="menu2" checked value="vegetariano" [(ngModel)]="invitado2.plato">
-                <label for="veggi2">Vegetariano</label>
+                <label for="veggi2">Vegetarià</label>
             </div>
         </div>
 
     </div>
     
     <div>
-        <textarea [(ngModel)]="invitado2.comentarios" name="comentarios" rows="2" placeholder="Alergias? Sugerencias? Quieres contarnos algo?"></textarea>
+        <textarea [(ngModel)]="invitado2.comentarios" name="comentarios" rows="2" 
+            placeholder="Al.lèrgies / Suggerències / Ens vols explicar quelcom?"></textarea>
 
         <div class="confirm mt-20" (click)="addOrPatch()">Confirmar</div>
     </div>
@@ -86,9 +87,14 @@
 </form>
 <div class="titulo1" *ngIf="invitado1.asiste!=='Sí' && invitado2?.asiste!=='Sí'">Que pena que no puedas :(</div>
 
-<div class="bizum" *ngIf="invitado1.asiste==='Sí' || (invitado2.nombre && invitado2.asiste==='Sí')">
-    <span>"Hay 3 cosas importantes en la vida;</span>
-    <span>Salud, dinero y amor</span>
-    <span>Afortunadamente, nos sobran salud y amor"</span>
-    <span class="biz"><img src="../assets/exchange.png" width="32" alt=""> Bizum: 670843247</span>
+<!-- *ngIf="invitado1.asiste==='Sí' || (invitado2.nombre && invitado2.asiste==='Sí')" -->
+<div class="bizum">
+    <span>"Hi ha tres coses importants a la vida;</span>
+    <span>Salut, Diners i Amor</span>
+    <span>Afortunadament, ens sobra salut i amor"</span>
+    <span class="biz">Bizum</span>
+    <span class="biz">670843247 | 658967798</span>
+    <span class="biz">Transferència</span>
+    <span class="biz">ES 2100 0802 4502 0099 4212</span>
+    
 </div>
