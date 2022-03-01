@@ -12,13 +12,14 @@
   /* background-image: url(../assets/annie-spratt-wuc-KEIBrdE-unsplash.jpg); */
   /* background-image: url(../assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg); */
   background-size: cover;
-  /* background-position: center; */
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: -15px;
+  max-width: 575px;
+  margin: 0 auto;
 }
 
 .inner-container{
@@ -30,9 +31,6 @@ h1, h3 {
   margin: 8px 0;
   font-family: 'Satisfy', cursive;
 }
-
-
-
 
 h1{
   -webkit-animation:titleFrame 3s cubic-bezier(.215,.61,.355,1.000) both;animation:titleFrame 3s cubic-bezier(.215,.61,.355,1.000) both
@@ -47,6 +45,10 @@ h1{
 
 @keyframes titleFrame {0%{letter-spacing:1em;-webkit-transform:translateZ(400px);transform:translateZ(400px);opacity:0}40%{opacity:.6}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes tracking-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(400px);transform:translateZ(400px);opacity:0}40%{opacity:.6}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
 
+.mw-575{
+  max-width: 575px;
+  margin: 0 auto;
+}
 @media screen and (max-width: 575px) {
   
 }
