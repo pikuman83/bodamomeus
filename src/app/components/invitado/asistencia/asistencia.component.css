@@ -6,6 +6,7 @@ form{
 .radios{
     font-size: 17px;
     padding: 20px;
+    position: relative;
 }
 .confirm{
     padding: 13px 0;
@@ -63,7 +64,9 @@ textarea{
     resize: none;
 }
 label:not(:nth-child(2n+1)){
-    padding: 8px
+    padding: 8px;
+    position: absolute;
+    top: 12px;
 }
 .excusa-label{
     margin: -22px 0 0 25px;
