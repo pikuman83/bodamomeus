@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/global.service';
-import { Data } from '../../interfaces'
+import { Data } from '../../../interfaces'
 
 @Component({
   selector: 'app-asistencia',
