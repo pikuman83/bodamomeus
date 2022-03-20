@@ -8,11 +8,11 @@
 }
 
 .container{
-  background-image: url(../assets/momeus1.jpeg);
-  background-position-x: -142px;
+  background-image: url(../assets/momeus2.jpeg);
+  /* background-position-x: -142px; */
   /* background-image: url(../assets/annie-spratt-wuc-KEIBrdE-unsplash.jpg); */
   /* background-image: url(../assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg); */
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -21,22 +21,20 @@
   align-items: center;
   max-width: 575px;
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 295px;
   position: relative;
 }
 
 .inner-container{
-  padding: 37% 0 40% 7%;
-  text-align: center;
-
   padding: 4px 0 12px 0px;
   text-align: center;
-  color: navajowhite;
-  background-color: brown;
-  opacity: .7;
+  color: white;
+  background-color: #C04342;
+  /* opacity: .9; */
   position: absolute;
-  top: 0px;
+  bottom: -75px;
   width: 100%;
+  letter-spacing: 3px;
 }
 
 h1, h3 {

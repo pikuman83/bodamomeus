@@ -1,5 +1,5 @@
 form{
-    background-color: #ead0d3;
+    background-color: #E8C2B4;
     box-sizing: border-box;
     padding-bottom: 20px;
 }
@@ -22,7 +22,10 @@ form{
 .excusa{
     font-size: 14px;
     text-align: end;
-    color: brown;
+    /* color: brown; */
+    border: 1px solid gray;
+    padding: 5px;
+    align-self: end;
 }
 textarea{
     width: 100%;
@@ -49,8 +52,8 @@ textarea{
     color: #708469;
 }
 .plato{
-    border-top: 1px solid #708469;
-    border-bottom: #708469 1px solid;
+    border-top: 1px solid #C04342;
+    border-bottom: 1px solid #C04342;
     color: black;
     margin: 20px auto;
     padding: 10px;
@@ -63,6 +66,9 @@ textarea{
     display: block;
     resize: none;
 }
+textarea::placeholder{
+    color: #C04342;
+}
 label:not(:nth-child(2n+1)){
     padding: 8px;
     position: absolute;
@@ -73,6 +79,7 @@ label:not(:nth-child(2n+1)){
 }
 
 .bizum{
+    background-color: #C04342;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -80,6 +87,7 @@ label:not(:nth-child(2n+1)){
     padding: 20px;
     font-size: 18px;
     text-align: center;
+    color: white;
     font-family: 'Londrina Solid', cursive;
   }
   span{
@@ -91,5 +99,5 @@ label:not(:nth-child(2n+1)){
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: #36b1f5;
+    color: #E8C2B4;
   }
