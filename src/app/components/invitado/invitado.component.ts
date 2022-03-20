@@ -35,8 +35,8 @@ export class InvitadoComponent implements OnInit {
         name2: param[2]! 
       }
 
-      this.service.invitado1.next(param[1]!);
-      this.service.invitado2.next(param[2]!);      
+      this.service.invitado1.next(param[1]);
+      this.service.invitado2.next(param[2]);      
     }
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/global.service';
 import { Data } from '../../../interfaces'
 
@@ -33,7 +34,7 @@ export class AsistenciaComponent implements OnInit {
     plato: 'vegetariano'
   }
 
-  constructor(private service: GlobalService) {
+  constructor(private service: GlobalService, private router: Router) {
     service.invitado1.subscribe(inv => this.invitado1.nombre = inv);
     service.invitado2.subscribe(inv2 => this.invitado2.nombre = inv2? inv2 : '')
    }
@@ -50,13 +51,13 @@ export class AsistenciaComponent implements OnInit {
       if(this.invitado2.nombre){
         this.invitado2.comentarios = this.invitado1.comentarios;
         this.service.create('bodaMomeus', this.invitado2).then(y => {
-          alert('Notificación enviada')
+          alert('Muchas gracias, nos vemos pronto')
         })
       }
       else {
-        alert('Notificación enviada')
+        alert('Muchas gracias, nos vemos pronto')
       }
-      // hide form?? create a nice notification?
+      this.router.navigateByUrl("/")
     })
   }
 
