@@ -1,5 +1,5 @@
 <form #asistenciaForm="ngForm">
-    <div class="titulo1">Comptem amb tu?</div>
+    <div class="titulo1">Comptem amb {{invitado2.nombre? 'vosaltres':'tu'}}?</div>
 
     <!-- Invitado 1 -->
     <div class="asistencia" [class.bb]="invitado2.nombre">

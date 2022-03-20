@@ -34,7 +34,7 @@ export class AsistenciaComponent implements OnInit {
   }
 
   constructor(private service: GlobalService) {
-    service.invitado1.subscribe(inv => this.invitado1.nombre = inv!);
+    service.invitado1.subscribe(inv => this.invitado1.nombre = inv);
     service.invitado2.subscribe(inv2 => this.invitado2.nombre = inv2? inv2 : '')
    }
 
