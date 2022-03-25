@@ -1,12 +1,27 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+export class abc {
+  public readonly x: string;
+  public readonly y: string;
+  constructor(x: string, y: string){
+    this.x = x;
+    this.y = y
+  }
+  getabc(x: string){
+    return x
+  }
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'bodaMomeus';
+
+  ngOnInit(): void {
+    const abc1 = new abc('hello', 'hello1');
+    console.log(abc,...Object.values(abc))
+  }
 
   
   // @ViewChild('videoEl') el!: ElementRef<any>;
