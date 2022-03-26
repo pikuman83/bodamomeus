@@ -12,10 +12,20 @@
     <tbody>
         <tr class="table-row" *ngFor="let i of invitados; let j = index">
             <td>{{j+1}}.</td>
-            <td>{{i.nombre}}</td>
-            <td class="brown" [class.green]="i.asiste==='Sí'">{{i.asiste}}</td>
-            <td>{{i.plato}}</td>
-            <td>{{i.comentarios}}</td>
+            <td>{{i.data.nombre}}</td>
+            <td class="brown" [class.green]="i.data.asiste==='Sí'">{{i.data.asiste}}</td>
+            <td>{{i.data.plato}}</td>
+            <td>{{i.data.comentarios}}</td>
+            <td><input class="amount" [class.green-border]="i.data.regalo>0" #amount type="number" [value]="i.data.regalo" (change)="i.data.regalo=amount.value"></td>
+            <td><button type="submit" (click)="confirmGift(i)">Confirmar</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>TOTAL</td>
+            <td>{{totalRegalosFunc()|currency: '€'}}</td>
         </tr>
     </tbody>
 

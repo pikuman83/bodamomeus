@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { doc, getDocs, getFirestore } from 'firebase/firestore';
-import { collection, addDoc } from "firebase/firestore";
+import { doc, getDocs, getFirestore, setDoc } from 'firebase/firestore';
+import { collection, addDoc, updateDoc } from "firebase/firestore";
+import { DocumentData } from 'rxfire/firestore/interfaces';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -21,6 +22,14 @@ export class GlobalService {
   async create(path: string, data: any){
     try {
       await addDoc(collection(this.db, path), data);
+    } catch (e: any) {
+      console.error(e)
+    }
+  }
+
+  async updateDocument(docu: any){
+    try {
+      await setDoc(doc(this.db, 'bodaMomeus', docu.id), docu.data);
     } catch (e: any) {
       console.error(e)
     }
