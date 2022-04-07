@@ -16,8 +16,17 @@
             <td class="brown" [class.green]="i.data.asiste==='Sí'">{{i.data.asiste}}</td>
             <td>{{i.data.plato}}</td>
             <td>{{i.data.comentarios}}</td>
-            <td><input class="amount" [class.green-border]="i.data.regalo>0" #amount type="number" [value]="i.data.regalo" (change)="i.data.regalo=amount.value"></td>
-            <td><button type="submit" (click)="confirmGift(i)">Confirmar</button></td>
+            <td><input *ngIf="!i.data.regalo" class="amount" type="number" #amnt (change)="setAmount(amnt.value)">
+                <div *ngIf="i.data.regalo" class="amount received">{{i.data.regalo|currency: '€'}}</div>
+            </td>
+            
+            <td><button type="submit" *ngIf="!i.data.regalo"
+                [disabled]="i.data.regalo"
+                (click)="confirmGift(i)"
+                [class.received]="i.data.regalo">
+                {{i.data.regalo? 'Recibidos' : 'Confirmar'}}</button>
+                <img *ngIf="i.data.regalo && randomIndex()" [src]="icons[randomIndex()]" alt="honeymoon icon">
+            </td>
         </tr>
         <tr>
             <td></td>
@@ -25,7 +34,7 @@
             <td></td>
             <td></td>
             <td>TOTAL</td>
-            <td>{{totalRegalosFunc()|currency: '€'}}</td>
+            <td>{{totalRegalosFunc()| currency: '€'}}</td>
         </tr>
     </tbody>
 

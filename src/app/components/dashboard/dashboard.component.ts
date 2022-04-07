@@ -9,6 +9,16 @@ import { GlobalService } from 'src/app/global.service';
 export class DashboardComponent implements OnInit {
 
   invitados: any[] = [];
+  amount!: number;
+  icons = [
+    '/assets/wedding-car.png',
+    '/assets/honeymoon1.png',
+    '/assets/honeymoon2.png',
+    '/assets/honeymoon3.png',
+    '/assets/honeymoon4.png',
+    '/assets/honeymoon5.png',
+  ]
+
   constructor(private service: GlobalService) { }
 
   ngOnInit(): void {
@@ -21,16 +31,27 @@ export class DashboardComponent implements OnInit {
     }))
   }
 
+  setAmount(amnt: string){
+    this.amount = Number(amnt);
+  }
   confirmGift(data: any){
-    this.service.updateDocument(data).then((x: any)=> console.log('updated sucessfull'));
+    if(this.amount){
+      data.data.regalo = this.amount;
+      this.service.updateDocument(data);
+    }
   }
 
   totalRegalosFunc(): number{
-    let amount = 0;
+    let amount: number = 0;
     this.invitados.forEach(x => {
-      amount = Number(amount) + Number(x.data.regalo);
+      if (x.data.regalo)
+      amount += Number(x.data.regalo);
     })
     return amount;
+  }
+
+  randomIndex(): number {
+    return Math.floor(Math.random() * this.icons.length);
   }
 
 }

@@ -48,3 +48,8 @@ button{
 td{
     max-width: 100px;
 }
+.received {
+    background: none;
+    color: green;
+    border:none;
+}
