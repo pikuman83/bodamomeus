@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
   confirmGift(data: any){
     if(this.amount){
       data.data.regalo = this.amount;
+      data.data.icon = this.icons[this.randomIndex()]
       this.service.updateDocument(data);
     }
   }

@@ -21,11 +21,10 @@
             </td>
             
             <td><button type="submit" *ngIf="!i.data.regalo"
-                [disabled]="i.data.regalo"
                 (click)="confirmGift(i)"
                 [class.received]="i.data.regalo">
                 {{i.data.regalo? 'Recibidos' : 'Confirmar'}}</button>
-                <img *ngIf="i.data.regalo && randomIndex()" [src]="icons[randomIndex()]" alt="honeymoon icon">
+                <img *ngIf="i.data.regalo && randomIndex()" [src]="i.data.icon" alt="honeymoon icon">
             </td>
         </tr>
         <tr>
